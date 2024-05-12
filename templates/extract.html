@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="/extract" method="post" enctype="multipart/form-data">
+
+        <div class="mt-2 py-3 px-4 bg-primary text-white rounded" style="margin-right:280px;">
+            <h1>Meta Data Extraction</h1>
+        </div>
+
+
+
+        <div class="row" style="margin-top:30px;">
+            <div class="col">
+                <label class="form-label" style="margin-bottom:20px;" for="customFile">FILE INPUT</label>
+                <input type="file" class="form-control" id="customFile" name="file" />
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary" style="margin-top:43px;">NLP Extract</button>
+            </div>
+            <div class="col" style="margin-top:43px;">
+                <span>File Type Processed: {{ file_type }}</span><!-- Add this line -->
+            </div>
+        </div>
+    </form>
+    <div class="row" style="margin-top:10px; width:100%">
+        <div class="col-6">
+            <label for="title" style="display: block;margin-bottom:10px;">Title:</label>  <!-- Add this style -->
+            <textarea type="text" style="width:90%;padding:10px;" id="title" name="title">{{ title }}</textarea>
+        </div>
+        <div class="col-6">
+            <label for="keywords" style="display: block;margin-bottom:10px;">Keywords:</label>  <!-- Add this style -->
+            <textarea type="text" style="width:80%;padding:10px;" id="keywords" name="keywords">{{ keywords }}</textarea>
+        </div>
+    </div>
+    <div class="row description" style="margin-top:30px;">
+        <div class="form-group">
+            <label for="description" style="margin-bottom:10px;">Description:</label>
+            <textarea id="description" style="height:350px; width:100%;padding:10px;" name="description">{{ description }}</textarea>
+            <!-- <label for="description">Description</label>
+            <textarea class="form-control" style="height:200px;" id="description"></textarea> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
