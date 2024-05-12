@@ -13,7 +13,6 @@ import os
 from werkzeug.utils import secure_filename
 from extract import *
 
-
 model = spacy.load('en_core_web_sm')
 
 app = Flask(__name__)
@@ -21,7 +20,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/extract', methods=['POST', 'GET'])
 def extract():
@@ -42,8 +40,6 @@ def extract():
                 file_type = 'file processed'
             file.save(file_path)
             filename, summary, keywords, json_result = summarize(model, file_path)
-            # print(summary)
-            # print(keywords)
         else:
             print("No file part")
     return render_template('extract.html', title=filename, description=summary, keywords=keywords, file_type=file_type)
