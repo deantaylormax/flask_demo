@@ -2,11 +2,39 @@
     width: 100%;
 } */
 
-
 .title, .keywords, .description {
     font-family: "Roboto", sans-serif;
 }
 
+.box-label, .file-type, .form-label {
+    font-family: "Roboto", sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
 .box-title {
     font-family: "Roboto", sans-serif;
+}
+
+.container {
+    background-image: url("../img/faded.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* body::before {
+    content: "";
+    background: url("../img/background_container.webp");
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+} */
+
+textarea {
+    border-radius: 15px;
 }
