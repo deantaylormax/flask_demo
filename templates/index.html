@@ -1,9 +1,59 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="mt-4 p-5 bg-primary text-white rounded" style="margin-right:280px;">
-    <h1>Meta Data Extraction</h1>
-    <p>Advancing the User Experience</p>
-    <p style="margin-top:40px;">Developed by Rishi Alla</p>
+<!-- <div class="container-top">
+    <div class="mt-4 p-5 bg-primary text-white rounded" style="margin-right:280px;">
+        <h1>Meta Data Extraction</h1>
+        <p>Advancing the User Experience</p>
+        <p style="margin-top:40px;">Developed by Rishi Alla</p>
+    </div>
+</div> -->
+<div class="container-bottom" style="margin-top: 100px; background-color: red;"> 
+    <div class="slide" style="display: none;">
+        <p style="color: black">Content of Slide one</p>
+    </div>
+    <div class="slide" style="display: none;">
+        <p style="color: black">Content of Slide twp</p>
+    </div>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
 </div>
+
+
+<script>
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+// Show first slide
+if (slides[currentSlide]) {
+    slides[currentSlide].style.display = 'block';
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+    // Hide current slide
+    if (slides[currentSlide]) {
+        slides[currentSlide].style.display = 'none';
+    }
+
+    // Show previous slide
+    currentSlide--;
+    if (slides[currentSlide]) {
+        slides[currentSlide].style.display = 'block';
+    }
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    // Hide current slide
+    if (slides[currentSlide]) {
+        slides[currentSlide].style.display = 'none';
+    }
+
+    // Show next slide
+    currentSlide++;
+    if (slides[currentSlide]) {
+        slides[currentSlide].style.display = 'block';
+    }
+});
+</script>
+
 {% endblock %}
